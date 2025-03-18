@@ -24,7 +24,7 @@ jobs:
           echo '        <item>' >> meniny.xml
           echo '            <title>Meniny '$(date +"%d. %B")'</title>' >> meniny.xml
           echo '            <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-          echo '            <description>Dnes majú meniny $(curl -s "https://svetovemeniny.sk/api/meniny?den=$(date +%d)&mesiac=$(date +%m)&krajina=sk")</description>' >> meniny.xml
+          echo '            <description>Dnes majú meniny $(curl -s "https://nameday.abalin.net/api/V2/today/bratislava")</description>' >> meniny.xml
           echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
           echo '        </item>' >> meniny.xml
           echo '    </channel>' >> meniny.xml
