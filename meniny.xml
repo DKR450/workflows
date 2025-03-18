@@ -9,7 +9,7 @@
             <title>Meniny 18. March</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
             <description>Dnes majú meniny $(curl -s "https://nameday.abalin.net/api/V2/today/bratislava")</description>
-            <pubDate>Tue, 18 Mar 2025 12:55:54 +0000</pubDate>
+            <pubDate>Tue, 18 Mar 2025 13:00:23 +0000</pubDate>
         </item>
     </channel>
 </rss>
