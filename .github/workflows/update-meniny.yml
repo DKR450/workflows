@@ -18,11 +18,14 @@ jobs:
           echo '<rss version="2.0">' >> meniny.xml
           echo '    <channel>' >> meniny.xml
           echo '        <title>Meniny na Slovensku</title>' >> meniny.xml
-          echo '        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
+          echo '        <link>https://tvoj-github-username.github.io/tvoj-repozitar/meniny.xml</link>' >> meniny.xml
           echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
           echo '        <language>sk</language>' >> meniny.xml
           echo '        <item>' >> meniny.xml
-          echo '            <title>Meniny má $(curl -s "https://svetovemeniny.sk/api/meniny?den=$(date +%d)&mesiac=$(date +%m)&krajina=sk")</title>' >> meniny.xml
+          echo '            <title>Meniny '$(date +"%d. %B")'</title>' >> meniny.xml
+          echo '            <link>https://tvoj-github-username.github.io/tvoj-repozitar/meniny.xml</link>' >> meniny.xml
+          echo '            <description>Dnes majú meniny $(curl -s "https://svetovemeniny.sk/api/meniny?den=$(date +%d)&mesiac=$(date +%m)&krajina=sk")</description>' >> meniny.xml
+          echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
           echo '        </item>' >> meniny.xml
           echo '    </channel>' >> meniny.xml
           echo '</rss>' >> meniny.xml
