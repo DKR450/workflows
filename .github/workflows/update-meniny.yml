@@ -4,16 +4,19 @@ on:
   schedule:
     - cron: '0 0 * * *' # Spustí sa každý deň o polnoci
   workflow_dispatch:      # Umožní ručné spustenie cez GitHub UI
-
+  
 jobs:
   update-rss:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
+        
       - name: Generate RSS file
         run: |
+          # Získanie menín pre Slovensko
+          namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r '.data.sk')
+          
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
           echo '    <channel>' >> meniny.xml
@@ -24,7 +27,7 @@ jobs:
           echo '        <item>' >> meniny.xml
           echo '            <title>Meniny '$(date +"%d. %B")'</title>' >> meniny.xml
           echo '            <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-          echo '            <description>Dnes majú meniny $(curl -s "https://nameday.abalin.net/api/V2/today/bratislava")</description>' >> meniny.xml
+          echo '            <description>Dnes majú meniny '$namedays_sk'</description>' >> meniny.xml
           echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
           echo '        </item>' >> meniny.xml
           echo '    </channel>' >> meniny.xml
