@@ -25,7 +25,7 @@ jobs:
           echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
           echo '        <language>sk</language>' >> meniny.xml
           echo '        <item>' >> meniny.xml
-          echo '            <title>Meniny '$(date +"%d. %B")'</title>' >> meniny.xml
+          echo '            <title>Dnes má meniny '$namedays_sk'</title>' >> meniny.xml
           echo '            <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
           echo '            <description>Dnes má meniny '$namedays_sk'</description>' >> meniny.xml
           echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
