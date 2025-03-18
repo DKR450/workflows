@@ -1,0 +1,35 @@
+name: Update Meniny RSS
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Spustí sa každý deň o polnoci
+
+jobs:
+  update-rss:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate RSS file
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
+          echo '<rss version="2.0">' >> meniny.xml
+          echo '    <channel>' >> meniny.xml
+          echo '        <title>Meniny na Slovensku</title>' >> meniny.xml
+          echo '        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
+          echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
+          echo '        <language>sk</language>' >> meniny.xml
+          echo '        <item>' >> meniny.xml
+          echo '            <title>Meniny má $(curl -s "https://svetovemeniny.sk/api/meniny?den=$(date +%d)&mesiac=$(date +%m)&krajina=sk")</title>' >> meniny.xml
+          echo '        </item>' >> meniny.xml
+          echo '    </channel>' >> meniny.xml
+          echo '</rss>' >> meniny.xml
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add meniny.xml
+          git commit -m "Automatická aktualizácia menín"
+          git push
