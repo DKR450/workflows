@@ -2,11 +2,14 @@
 <rss version="2.0">
     <channel>
         <title>Meniny na Slovensku</title>
-        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
+        <link>https://tvoj-github-username.github.io/tvoj-repozitar/meniny.xml</link>
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Meniny má $(curl -s "https://svetovemeniny.sk/api/meniny?den=$(date +%d)&mesiac=$(date +%m)&krajina=sk")</title>
+            <title>Meniny 18. March</title>
+            <link>https://tvoj-github-username.github.io/tvoj-repozitar/meniny.xml</link>
+            <description>Dnes majú meniny $(curl -s "https://svetovemeniny.sk/api/meniny?den=$(date +%d)&mesiac=$(date +%m)&krajina=sk")</description>
+            <pubDate>Tue, 18 Mar 2025 12:39:10 +0000</pubDate>
         </item>
     </channel>
 </rss>
