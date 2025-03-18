@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Meniny 18. March</title>
+            <title>Dnes má meniny Eduard</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
             <description>Dnes má meniny Eduard</description>
-            <pubDate>Tue, 18 Mar 2025 13:06:46 +0000</pubDate>
+            <pubDate>Tue, 18 Mar 2025 13:09:14 +0000</pubDate>
         </item>
     </channel>
 </rss>
