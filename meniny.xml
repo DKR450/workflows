@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Meniny na Slovensku</title>
+        <link>https://tvoj-github-username.github.io/tvoj-repozitar/meniny.xml</link>
+        <description>Meniny na Slovensku pre dnešný deň</description>
+        <language>sk</language>
+
+        <item>
+            <title>Meniny 18. marca</title>
+            <link>https://tvoj-github-username.github.io/tvoj-repozitar/meniny.xml</link>
+            <description>Dnes majú meniny Eduard</description>
+            <pubDate>Tue, 18 Mar 2025 00:00:00 +0100</pubDate>
+        </item>
+
+    </channel>
+</rss>
