@@ -3,6 +3,7 @@ name: Update Meniny RSS
 on:
   schedule:
     - cron: '0 0 * * *' # Spustí sa každý deň o polnoci
+  workflow_dispatch:      # Umožní ručné spustenie cez GitHub UI
 
 jobs:
   update-rss:
