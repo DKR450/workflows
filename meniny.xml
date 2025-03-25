@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Gabriel</title>
+            <title>Dnes má meniny Marián</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Gabriel</description>
-            <pubDate>Mon, 24 Mar 2025 00:49:34 +0000</pubDate>
+            <description>Dnes má meniny Marián</description>
+            <pubDate>Tue, 25 Mar 2025 00:47:34 +0000</pubDate>
         </item>
     </channel>
 </rss>
