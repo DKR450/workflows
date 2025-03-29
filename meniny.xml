@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Soňa</title>
+            <title>Dnes má meniny Miroslav</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Soňa</description>
-            <pubDate>Fri, 28 Mar 2025 00:46:51 +0000</pubDate>
+            <description>Dnes má meniny Miroslav</description>
+            <pubDate>Sat, 29 Mar 2025 00:46:24 +0000</pubDate>
         </item>
     </channel>
 </rss>
