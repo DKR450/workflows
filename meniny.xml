@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Jela</title>
+            <title>Dnes má meniny Marcel</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Jela</description>
-            <pubDate>Sat, 19 Apr 2025 00:46:05 +0000</pubDate>
+            <description>Dnes má meniny Marcel</description>
+            <pubDate>Sun, 20 Apr 2025 00:53:36 +0000</pubDate>
         </item>
     </channel>
 </rss>
