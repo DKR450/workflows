@@ -17,8 +17,12 @@ jobs:
           # Získanie menín pre Slovensko
           curl -sL https://github.com/jozefgrencik/slovak-name-days/blob/main/data/names.json > names.json
           echo "Stiahnuté dáta mien."
-                 
+
       - name: Get today's date
+        id: date
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        
+      - name: Generate RSS file
         run: |
           today=$(date +'%Y-%m-%d')
           namedays=$(cat names.json | jq -r ".days.\"$today\"[]" | paste -sd ', ')
@@ -27,22 +31,27 @@ jobs:
             echo "Pre dátum $today neboli nájdené žiadne meniny."
             exit 0
           fi
-
+          
+          # Získanie menín pre Slovensko
+          # namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r '.data.sk')
+          
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
-          echo '  <channel>' >> meniny.xml
-          echo '    <title>Meniny na Slovensku</title>' >> meniny.xml
-          echo '    <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-          echo '    <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
-          echo '    <language>sk</language>' >> meniny.xml
-          echo '    <item>' >> meniny.xml
-          echo '      <title>Dnes má meniny '$namedays'</title>' >> meniny.xml
-          echo '      <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-          echo '      <description>Dnes má meniny '$namedays'</description>' >> meniny.xml
-          echo '      <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
-          echo '    </item>' >> meniny.xml
-          echo '  </channel>' >> meniny.xml
+          echo '    <channel>' >> meniny.xml
+          echo '        <title>Meniny na Slovensku</title>' >> meniny.xml
+          echo '        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
+          echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
+          echo '        <language>sk</language>' >> meniny.xml
+          echo '        <item>' >> meniny.xml
+          echo '            <title>Dnes má meniny '$namedays'</title>' >> meniny.xml
+          echo '            <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
+          echo '            <description>Dnes má meniny '$namedays'</description>' >> meniny.xml
+          echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
+          echo '        </item>' >> meniny.xml
+          echo '    </channel>' >> meniny.xml
           echo '</rss>' >> meniny.xml
+
+
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
