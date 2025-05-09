@@ -15,7 +15,7 @@ jobs:
       - name: Generate RSS file
         run: |
           # Získanie menín pre Slovensko
-          curl -sL https://github.com/jozefgrencik/slovak-name-days/blob/main/data/names.json > names.json
+          curl -sL https://raw.githubusercontent.com/jozefgrencik/slovak-name-days/main/data/names.json > names.json
           echo "Stiahnuté dáta mien."
 
       - name: Get today's date
