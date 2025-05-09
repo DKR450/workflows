@@ -41,7 +41,7 @@ jobs:
           echo '        </item>' >> meniny.xml
           echo '    </channel>' >> meniny.xml
           echo '</rss>' >> meniny.xml
-
+          echo "API Response: $response"
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
