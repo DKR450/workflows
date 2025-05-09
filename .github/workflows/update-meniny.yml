@@ -19,7 +19,7 @@ jobs:
 
           for i in $(seq 1 $MAX_RETRIES); do
             response=$(curl -s -o - "https://nameday.abalin.net/api/V2/today/bratislava")
-            if [[ "$response" != *"just a moment"* ]]; then
+            if [[ "$response" != *"<!DOCTYPE html><html lang="en-US"><head><title>Just a moment..."* ]]; then
               echo "API hovor úspešný po $i pokusoch."
               echo "$response"
               break
