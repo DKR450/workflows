@@ -32,9 +32,6 @@ jobs:
             exit 0
           fi
           
-          # Získanie menín pre Slovensko
-          # namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r '.data.sk')
-          
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
           echo '    <channel>' >> meniny.xml
