@@ -15,7 +15,8 @@ jobs:
       - name: Generate RSS file
         run: |
           # Získanie menín pre Slovensko
-          namedays_sk=$(curl -s "http://api.minuto.cz/namedays/namedayAPI.php/today?country_code=sk" | jq -r '.names[]')
+          namedays_sk=$(curl -s -H "User-Agent: Mozilla" "http://api.minuto.cz/namedays/namedayAPI.php/today?country_code=sk" | jq -r '.names[]')
+
                     
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
