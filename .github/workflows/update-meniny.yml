@@ -15,7 +15,7 @@ jobs:
       - name: Generate RSS file
         run: |
           # Získanie menín pre Slovensko
-          namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r '.data.sk')
+          namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/Bratislava" | jq -r '.data.sk')
           
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
