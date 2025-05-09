@@ -16,6 +16,18 @@ jobs:
         run: |
           # Získanie menín pre Slovensko
           namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r 'data.sk')
+          response=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava")
+          
+          if echo "$response" | jq empty 2>/dev/null; then
+            namedays_sk=$(echo "$response" | jq -r '.data.sk')
+            echo "Dnes má meniny: $namedays_sk"
+          else
+            echo "Chyba: API nevrátilo validný JSON"
+            echo "$response"
+            exit 1
+          fi
+
+
           
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
