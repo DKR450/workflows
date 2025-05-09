@@ -15,8 +15,17 @@ jobs:
       - name: Generate RSS file
         run: |
           # Získanie menín pre Slovensko
-          namedays_sk=$(curl -s -H "User-Agent: Mozilla" "http://api.minuto.cz/namedays/namedayAPI.php/today?country_code=sk" | jq -r '.names[]')
-                   
+          # namedays_sk=$(curl -s -H "User-Agent: Mozilla" "http://api.minuto.cz/namedays/namedayAPI.php/today?country_code=sk" | jq -r '.names[]')
+          # Fetch namedays data
+          response=$(curl -s "http://api.minuto.cz/namedays/namedayAPI.php/today?country_code=sk")
+          
+          # Validate JSON response using jq
+          if echo "$response" | jq empty 2>/dev/null; then
+            namedays_sk=$(echo "$response" | jq -r '.names[]')
+          else
+            echo "Error: API response is not valid JSON. Falling back to placeholder."
+            namedays_sk="Unavailable"
+          fi
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
           echo '    <channel>' >> meniny.xml
