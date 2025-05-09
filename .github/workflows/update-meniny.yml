@@ -23,7 +23,7 @@ jobs:
           pip install requests
 
       - name: Run Python script to generate RSS
-        run: python workflows/update_meniny.py
+        run: python update_meniny.py
 
       - name: Commit and push changes
         env:
