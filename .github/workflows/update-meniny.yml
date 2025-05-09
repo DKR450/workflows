@@ -31,7 +31,7 @@ jobs:
           today_day="${{ steps.date.outputs.TODAY_DAY }}"
           today_month="${{ steps.date.outputs.TODAY_MONTH }}"
 
-          namedays=$(cat names.json | jq -r ".[] | select(.month == ($today_month | tonumber) and .day == ($today_day | tonumber)) | .names[]" | paste -sd ', ')
+          namedays=$(cat names.json | jq -r ".[] | select(.month == $today_month and .day == $today_day) | .names[]" | paste -sd ', ')
 
           if [ -z "$namedays" ]; then
             echo "Pre dnešný deň ($today_day.$today_month) neboli nájdené žiadne meniny."
