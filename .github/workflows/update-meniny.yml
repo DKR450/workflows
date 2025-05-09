@@ -1,34 +1,45 @@
-- name: Generate RSS file
-  run: |
-    # Fetch namedays for Slovakia
-    api_response=$(curl -s "https://nameday.abalin.net/api/V2/today/Bratislava")
+name: Update Meniny RSS
 
-    # Validate API response
-    if echo "$api_response" | jq empty 2>/dev/null; then
-      namedays_sk=$(echo "$api_response" | jq -r '.data.sk')
-      
-      if [ "$namedays_sk" == "null" ] || [ -z "$namedays_sk" ]; then
-        echo "Error: Namedays data is missing from the API response." >&2
-        exit 1
-      fi
-    else
-      echo "Error: Invalid API response. Cannot parse JSON." >&2
-      exit 1
-    fi
+on:
+  schedule:
+    - cron: '0 0 * * *' # Spustí sa každý deň o polnoci
+  workflow_dispatch:      # Umožní ručné spustenie cez GitHub UI
+  
+jobs:
+  update-rss:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Generate RSS file
+        run: |
+          # Získanie menín pre Slovensko
+          namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava")
+          
+          echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
+          echo '<rss version="2.0">' >> meniny.xml
+          echo '    <channel>' >> meniny.xml
+          echo '        <title>Meniny na Slovensku</title>' >> meniny.xml
+          echo '        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
+          echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
+          echo '        <language>sk</language>' >> meniny.xml
+          echo '        <item>' >> meniny.xml
+          echo '            <title>Dnes má meniny '$namedays_sk'</title>' >> meniny.xml
+          echo '            <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
+          echo '            <description>Dnes má meniny '$namedays_sk'</description>' >> meniny.xml
+          echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
+          echo '        </item>' >> meniny.xml
+          echo '    </channel>' >> meniny.xml
+          echo '</rss>' >> meniny.xml
 
-    # Generate RSS file
-    echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
-    echo '<rss version="2.0">' >> meniny.xml
-    echo '    <channel>' >> meniny.xml
-    echo '        <title>Meniny na Slovensku</title>' >> meniny.xml
-    echo '        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-    echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
-    echo '        <language>sk</language>' >> meniny.xml
-    echo '        <item>' >> meniny.xml
-    echo '            <title>Dnes má meniny '$namedays_sk'</title>' >> meniny.xml
-    echo '            <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-    echo '            <description>Dnes má meniny '$namedays_sk'</description>' >> meniny.xml
-    echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
-    echo '        </item>' >> meniny.xml
-    echo '    </channel>' >> meniny.xml
-    echo '</rss>' >> meniny.xml
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/DKR450/workflows.git
+          git add meniny.xml
+          git commit -m "Automatická aktualizácia menín" || exit 0
+          git push origin main
