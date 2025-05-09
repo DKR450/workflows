@@ -14,8 +14,27 @@ jobs:
         
       - name: Generate RSS file
         run: |
+          MAX_RETRIES=5
+          RETRY_DELAY=5 # sekúnd
+
+          for i in $(seq 1 $MAX_RETRIES); do
+            response=$(curl -s -o - "https://nameday.abalin.net/api/V2/today/bratislava")
+            if [[ "$response" != *"just a moment"* ]]; then
+              echo "API hovor úspešný po $i pokusoch."
+              echo "$response"
+              break
+            else
+              echo "API vrátilo 'just a moment'. Pokus $i z $MAX_RETRIES. Čakám $RETRY_DELAY sekúnd..."
+              sleep $RETRY_DELAY
+              RETRY_DELAY=$((RETRY_DELAY * 2)) # Exponenciálne navyšovanie čakacej doby
+            fi
+            if [[ $i -eq $MAX_RETRIES ]]; then
+              echo "Všetky pokusy zlyhali. API stále vracia 'just a moment'."
+              exit 1
+            fi
+          done
           # Získanie menín pre Slovensko
-          namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r '.data.sk')
+          # namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/bratislava" | jq -r '.data.sk')
           
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
