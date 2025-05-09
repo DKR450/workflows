@@ -21,8 +21,8 @@ jobs:
       - name: Get today's date
         id: date
         run: |
-          today_day=$(date +'%d')
-          today_month=$(date +'%m')
+          today_day=$(date +'%#d')
+          today_month=$(date +'%#m')
           echo "TODAY_DAY=$today_day" >> $GITHUB_OUTPUT
           echo "TODAY_MONTH=$today_month" >> $GITHUB_OUTPUT
         
