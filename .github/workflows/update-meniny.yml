@@ -20,15 +20,21 @@ jobs:
 
       - name: Get today's date
         id: date
-        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        run: |
+          today_day=$(date +'%d')
+          today_month=$(date +'%m')
+          echo "TODAY_DAY=$today_day" >> $GITHUB_OUTPUT
+          echo "TODAY_MONTH=$today_month" >> $GITHUB_OUTPUT
         
       - name: Generate RSS file
         run: |
-          today=$(date +'%Y-%m-%d')
-          namedays=$(cat names.json | jq -r ".days.\"$today\"[]" | paste -sd ', ')
+          today_day="${{ steps.date.outputs.TODAY_DAY }}"
+          today_month="${{ steps.date.outputs.TODAY_MONTH }}"
+
+          namedays=$(cat names.json | jq -r ".[] | select(.month == $today_month and .day == $today_day) | .names[]" | paste -sd ', ')
 
           if [ -z "$namedays" ]; then
-            echo "Pre dátum $today neboli nájdené žiadne meniny."
+            echo "Pre dnešný deň ($today_day.$today_month) neboli nájdené žiadne meniny."
             exit 0
           fi
           
