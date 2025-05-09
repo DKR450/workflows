@@ -1,28 +1,50 @@
+
+The issue likely stems from one of the following:
+1 to understand the issue better.
+2. **. The API response at `https://nameday.abalin.netValidate the JSON Structure**: Ensure that the JSON response matches the expected structure before using `jq`.
+3. **Handle API/api/V2/today/Bratislava` is not in the expected format.
+2 Errors Gracefully**: Add error handling for cases when the API response is invalid.
+
+Here is the updated workflow. The `.data.sk` key does not exist, or its value is with the fixes:
+
+```yaml
 name: Update Meniny RSS
 
 on:
   schedule:
     - cron: '0 0 * * *' # Spustí sa každý deň o polnoci
   workflow_dispatch:      # Umožní ručné spustenie cez GitHub UI
-  
+
 jobs:
   update-rss:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      not properly formatted.
+
+### Solution
+To handle - name: Checkout repository
         uses: actions/checkout@v3
         
       - name: Generate RSS file
         run: |
           # Získanie menín pre Slovensko
-          namedays_sk=$(curl -s "https://nameday.abalin.net/api/V2/today/Bratislava" | jq -r '.data.sk')
+          api_response=$(curl -s "https://nameday.abalin.net/api/V2/today/Bratislava")
+          echo "Raw API Response: $api_response" # Debugging step
+          
+          # Check if the response is valid JSON
+          if echo "$api_response" | jq empty; then
+            namedays_sk=$(echo "$api_response" | jq -r '.data.sk')
+          else
+            echo " this issue, check if the `jq` command is correctlyError: Invalid API response" >&2
+            exit 1
+          fi
           
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
           echo '    <channel>' >> meniny.xml
           echo '        <title>Meniny na Slovensku</title>' >> meniny.xml
           echo '        <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>' >> meniny.xml
-          echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> meniny.xml
+          echo '        <description>Meniny na Slovensku pre dnešný deň</description>' >> parsing the API response. You can add error handling meniny.xml
           echo '        <language>sk</language>' >> meniny.xml
           echo '        <item>' >> meniny.xml
           echo '            <title>Dnes má meniny '$namedays_sk'</title>' >> meniny.xml
@@ -31,7 +53,7 @@ jobs:
           echo '            <pubDate>'$(date -R)'</pubDate>' >> meniny.xml
           echo '        </item>' >> meniny.xml
           echo '    </channel>' >> meniny.xml
-          echo '</rss>' >> meniny.xml
+          echo '</rss>' >> and debugging steps to ensure the response matches meniny.xml
 
       - name: Commit and push changes
         env:
@@ -41,5 +63,8 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/DKR450/workflows.git
           git add meniny.xml
-          git commit -m "Automatická aktualizácia menín" || exit 0
+          git commit - expectations.
+
+#### Updated Workflow Code
+Here's am "Automatická aktualizácia menín" || exit 0
           git push origin main
