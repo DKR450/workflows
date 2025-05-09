@@ -26,6 +26,7 @@ jobs:
             echo "Error: API response is not valid JSON. Falling back to placeholder."
             namedays_sk="Unavailable"
           fi
+          echo "API Response: $response"
           echo '<?xml version="1.0" encoding="UTF-8" ?>' > meniny.xml
           echo '<rss version="2.0">' >> meniny.xml
           echo '    <channel>' >> meniny.xml
@@ -41,7 +42,7 @@ jobs:
           echo '        </item>' >> meniny.xml
           echo '    </channel>' >> meniny.xml
           echo '</rss>' >> meniny.xml
-          echo "API Response: $response"
+
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
