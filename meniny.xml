@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Pankrác</title>
+            <title>Dnes má meniny Servác</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Pankrác</description>
-            <pubDate>Mon, 12 May 2025 09:58:21 +0000</pubDate>
+            <description>Dnes má meniny Servác</description>
+            <pubDate>Tue, 13 May 2025 02:03:36 +0000</pubDate>
         </item>
     </channel>
 </rss>
