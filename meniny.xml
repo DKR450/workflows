@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Servác</title>
+            <title>Dnes má meniny Bonifác</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Servác</description>
-            <pubDate>Tue, 13 May 2025 02:03:36 +0000</pubDate>
+            <description>Dnes má meniny Bonifác</description>
+            <pubDate>Wed, 14 May 2025 02:02:17 +0000</pubDate>
         </item>
     </channel>
 </rss>
