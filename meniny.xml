@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Ela,Vanesa</title>
+            <title>Dnes má meniny Urban</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Ela,Vanesa</description>
-            <pubDate>Sat, 24 May 2025 01:58:45 +0000</pubDate>
+            <description>Dnes má meniny Urban</description>
+            <pubDate>Sun, 25 May 2025 02:17:54 +0000</pubDate>
         </item>
     </channel>
 </rss>
