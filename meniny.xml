@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Viliam</title>
+            <title>Dnes má meniny Vilma</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Viliam</description>
-            <pubDate>Wed, 28 May 2025 02:04:27 +0000</pubDate>
+            <description>Dnes má meniny Vilma</description>
+            <pubDate>Thu, 29 May 2025 02:04:05 +0000</pubDate>
         </item>
     </channel>
 </rss>
