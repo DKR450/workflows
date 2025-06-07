@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Norbert</title>
+            <title>Dnes má meniny Róbert</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Norbert</description>
-            <pubDate>Fri, 06 Jun 2025 02:04:10 +0000</pubDate>
+            <description>Dnes má meniny Róbert</description>
+            <pubDate>Sat, 07 Jun 2025 02:03:34 +0000</pubDate>
         </item>
     </channel>
 </rss>
