@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Adolf</title>
+            <title>Dnes má meniny Vratislav</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Adolf</description>
-            <pubDate>Tue, 17 Jun 2025 02:07:33 +0000</pubDate>
+            <description>Dnes má meniny Vratislav</description>
+            <pubDate>Wed, 18 Jun 2025 02:06:35 +0000</pubDate>
         </item>
     </channel>
 </rss>
