@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Berta</title>
+            <title>Dnes má meniny Miloslav</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Berta</description>
-            <pubDate>Wed, 02 Jul 2025 02:07:46 +0000</pubDate>
+            <description>Dnes má meniny Miloslav</description>
+            <pubDate>Thu, 03 Jul 2025 02:08:18 +0000</pubDate>
         </item>
     </channel>
 </rss>
