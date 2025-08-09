@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Oskar</title>
+            <title>Dnes má meniny Ľubomíra</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Oskar</description>
-            <pubDate>Fri, 08 Aug 2025 02:25:23 +0000</pubDate>
+            <description>Dnes má meniny Ľubomíra</description>
+            <pubDate>Sat, 09 Aug 2025 02:07:40 +0000</pubDate>
         </item>
     </channel>
 </rss>
