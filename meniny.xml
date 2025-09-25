@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Ľubor,Ľuboš</title>
+            <title>Dnes má meniny Vladislav</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Ľubor,Ľuboš</description>
-            <pubDate>Wed, 24 Sep 2025 01:53:46 +0000</pubDate>
+            <description>Dnes má meniny Vladislav</description>
+            <pubDate>Thu, 25 Sep 2025 01:54:49 +0000</pubDate>
         </item>
     </channel>
 </rss>
