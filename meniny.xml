@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Vladimíra</title>
+            <title>Dnes má meniny Hedviga</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Vladimíra</description>
-            <pubDate>Thu, 16 Oct 2025 01:56:25 +0000</pubDate>
+            <description>Dnes má meniny Hedviga</description>
+            <pubDate>Fri, 17 Oct 2025 01:55:40 +0000</pubDate>
         </item>
     </channel>
 </rss>
