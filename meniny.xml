@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Barbora,Barbara</title>
+            <title>Dnes má meniny Oto</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Barbora,Barbara</description>
-            <pubDate>Thu, 04 Dec 2025 02:06:57 +0000</pubDate>
+            <description>Dnes má meniny Oto</description>
+            <pubDate>Fri, 05 Dec 2025 02:06:54 +0000</pubDate>
         </item>
     </channel>
 </rss>
