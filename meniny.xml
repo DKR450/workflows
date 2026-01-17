@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Kristína</title>
+            <title>Dnes má meniny Nataša</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Kristína</description>
-            <pubDate>Fri, 16 Jan 2026 02:21:22 +0000</pubDate>
+            <description>Dnes má meniny Nataša</description>
+            <pubDate>Sat, 17 Jan 2026 02:08:45 +0000</pubDate>
         </item>
     </channel>
 </rss>
