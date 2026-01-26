@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Gejza</title>
+            <title>Dnes má meniny Tamara</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Gejza</description>
-            <pubDate>Sun, 25 Jan 2026 02:33:13 +0000</pubDate>
+            <description>Dnes má meniny Tamara</description>
+            <pubDate>Mon, 26 Jan 2026 02:32:13 +0000</pubDate>
         </item>
     </channel>
 </rss>
