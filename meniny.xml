@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Vanda</title>
+            <title>Dnes má meniny Zoja</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Vanda</description>
-            <pubDate>Sat, 07 Feb 2026 02:40:29 +0000</pubDate>
+            <description>Dnes má meniny Zoja</description>
+            <pubDate>Sun, 08 Feb 2026 03:24:26 +0000</pubDate>
         </item>
     </channel>
 </rss>
