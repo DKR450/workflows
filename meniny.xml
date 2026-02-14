@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Arpád</title>
+            <title>Dnes má meniny Valentín</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Arpád</description>
-            <pubDate>Fri, 13 Feb 2026 02:54:42 +0000</pubDate>
+            <description>Dnes má meniny Valentín</description>
+            <pubDate>Sat, 14 Feb 2026 02:42:36 +0000</pubDate>
         </item>
     </channel>
 </rss>
