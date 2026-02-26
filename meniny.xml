@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Frederik,Frederika</title>
+            <title>Dnes má meniny Viktor</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Frederik,Frederika</description>
-            <pubDate>Wed, 25 Feb 2026 02:49:32 +0000</pubDate>
+            <description>Dnes má meniny Viktor</description>
+            <pubDate>Thu, 26 Feb 2026 02:44:31 +0000</pubDate>
         </item>
     </channel>
 </rss>
