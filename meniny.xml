@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Eduard</title>
+            <title>Dnes má meniny Jozef</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Eduard</description>
-            <pubDate>Wed, 18 Mar 2026 02:52:17 +0000</pubDate>
+            <description>Dnes má meniny Jozef</description>
+            <pubDate>Thu, 19 Mar 2026 02:54:02 +0000</pubDate>
         </item>
     </channel>
 </rss>
