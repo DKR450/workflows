@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Bystrík</title>
+            <title>Dnes má meniny Mária,Mia</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Bystrík</description>
-            <pubDate>Fri, 11 Sep 2026 04:17:26 +0000</pubDate>
+            <description>Dnes má meniny Mária,Mia</description>
+            <pubDate>Sat, 12 Sep 2026 04:16:05 +0000</pubDate>
         </item>
     </channel>
 </rss>
