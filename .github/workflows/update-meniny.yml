@@ -2,7 +2,7 @@ name: Update Meniny RSS
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '30 23 * * *'
       timezone: 'Europe/Bratislava'
   workflow_dispatch:      # Umožní ručné spustenie cez GitHub UI
   
