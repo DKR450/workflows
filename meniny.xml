@@ -6,10 +6,10 @@
         <description>Meniny na Slovensku pre dnešný deň</description>
         <language>sk</language>
         <item>
-            <title>Dnes má meniny Stela</title>
+            <title>Dnes má meniny František</title>
             <link>https://github.com/DKR450/workflows/blob/main/meniny.xml</link>
-            <description>Dnes má meniny Stela</description>
-            <pubDate>Sat, 03 Oct 2026 01:09:25 +0000</pubDate>
+            <description>Dnes má meniny František</description>
+            <pubDate>Sun, 04 Oct 2026 00:34:22 +0000</pubDate>
         </item>
     </channel>
 </rss>
